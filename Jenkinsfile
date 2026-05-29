@@ -29,7 +29,7 @@ pipeline {
 
     stage("deploy"){
       steps{
-        sh "java -jar ./target/*.jar"
+        sh "nohup java -jar \$(ls target/*.jar | head -1) &"
       }
     }
   }
